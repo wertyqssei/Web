@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтерактивні елементи</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiM2NjMzOTkiLz48dGV4dCB4PSIyMCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPtCUPC90ZXh0Pjwvc3ZnPg==" alt="Логотип">
+                ДинаМеню
+            </a>
+            
+            <button class="burger-menu" aria-label="Меню" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="menu-container">
+                <nav class="main-menu">
+                    <ul class="menu" id="menuContainer">
+                    </ul>
+                </nav>
+                
+                <form class="search-form">
+                    <input type="search" placeholder="Пошук..." aria-label="Пошук по сайту">
+                    <button type="submit" aria-label="Шукати">🔍</button>
+                </form>
+            </div>
+        </div>
+    </header>
+    
+    <div class="backdrop"></div>
+    
+    <button class="scroll-top" id="scrollTop" aria-label="Прокрутити вгору">↑</button>
+    
+    <div class="notification" id="notification"></div>
+    
+    <main>
+        <div class="container">
+            <h1>Інтерактивні елементи</h1>
+            
+            <section class="content">
+                <h2>Демонстрація інтерактивних елементів</h2>
+                <p>На цій сторінці представлені різні інтерактивні елементи інтерфейсу, реалізовані за допомогою HTML, CSS та JavaScript:</p>
+                <ul>
+                    <li>Динамічне випадаюче меню (вверху сторінки)</li>
+                    <li>Модальне вікно (спливаюче вікно)</li>
+                    <li>Форма зворотного зв'язку з валідацією</li>
+                    <li>Інтерактивна галерея зображень</li>
+                    <li>Кнопка "вгору" (з'являється при прокрутці)</li>
+                </ul>
+                <p>Натисніть на кнопку нижче, щоб відкрити модальне вікно:</p>
+                <button id="openModal" class="btn">Відкрити модальне вікно</button>
+            </section>
+            
+            <section class="content">
+                <h2>Інтерактивна галерея</h2>
+                <p>Натисніть на будь-яке зображення, щоб переглянути його у повноекранному режимі:</p>
+                
+                <div class="gallery" id="gallery">
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://picsum.photos/id/1015/600/400" alt="Природа 1">
+                        <div class="gallery-caption">Природа 1 - Гори та озеро</div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://picsum.photos/id/1018/600/400" alt="Природа 2">
+                        <div class="gallery-caption">Природа 2 - Гірський краєвид</div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://picsum.photos/id/1019/600/400" alt="Природа 3">
+                        <div class="gallery-caption">Природа 3 - Ліс</div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://picsum.photos/id/1022/600/400" alt="Природа 4">
+                        <div class="gallery-caption">Природа 4 - Північне сяйво</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="content">
+                <h2>Форма зворотного зв'язку</h2>
+                
+                <div class="contact-section">
+                    <div class="contact-info">
+                        <p>Заповніть форму, щоб зв'язатися з нами. Всі поля з зірочкою (*) є обов'язковими.</p>
+                        <p>Ваше повідомлення буде оброблено протягом 24 годин.</p>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Ім'я *</label>
+                                <input type="text" id="name" name="name" required>
+                                <div class="error">Введіть ваше ім'я</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="error">Введіть коректний email</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Тема</label>
+                                <select id="subject" name="subject">
+                                    <option value="general">Загальне питання</option>
+                                    <option value="support">Технічна підтримка</option>
+                                    <option value="billing">Питання оплати</option>
+                                    <option value="other">Інше</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Повідомлення *</label>
+                                <textarea id="message" name="message" required></textarea>
+                                <div class="error">Введіть ваше повідомлення</div>
+                            </div>
+                            
+                            <button type="submit" class="btn">Надіслати</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <h2>Модальне вікно</h2>
+            <button class="close-modal" id="closeModal" aria-label="Закрити">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Це приклад модального вікна, створеного з використанням HTML, CSS та JavaScript.</p>
+            <p>Модальні вікна часто використовуються для відображення важливої інформації або для взаємодії з користувачем без переходу на іншу сторінку.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" id="cancelModal">Скасувати</button>
+            <button class="btn" id="confirmModal">Погодитись</button>
+        </div>
+    </div>
+    
+    <div class="fullscreen-gallery" id="fullscreenGallery">
+        <button class="gallery-close" id="closeGallery" aria-label="Закрити галерею">&times;</button>
+        
+        <img src="" alt="" class="fullscreen-image" id="fullscreenImage">
+        
+        <div class="gallery-controls">
+            <button class="gallery-prev" id="prevImage" aria-label="Попереднє зображення">&#10094;</button>
+            <button class="gallery-next" id="nextImage" aria-label="Наступне зображення">&#10095;</button>
+        </div>
+        
+        <div class="gallery-counter" id="galleryCounter">1 / 4</div>
+    </div>
+    
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html> 
