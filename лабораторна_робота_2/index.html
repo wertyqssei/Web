@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивна навігація</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+        .header {
+            background-color: #9966cc;
+            padding: 1rem;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+        .menu li {
+            position: relative;
+        }
+        .menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .menu a:hover, .menu a:focus {
+            background-color: #7744aa;
+        }
+        .menu .active {
+            background-color: #7744aa;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #9966cc;
+            min-width: 200px;
+            z-index: 1;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .dropdown-content a {
+            padding: 0.75rem 1rem;
+            display: block;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .search-form {
+            display: flex;
+            margin-left: 1rem;
+        }
+        .search-input {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+        .search-button {
+            background-color: #7744aa;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+        }
+        .burger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+        @media (max-width: 992px) {
+            .search-form {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 1rem;
+                z-index: 2;
+                background-color: #9966cc;
+                padding: 1rem;
+                border-radius: 4px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+            .search-form.active {
+                display: flex;
+            }
+            .search-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+                font-size: 1.2rem;
+                margin-left: 1rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: #9966cc;
+                flex-direction: column;
+                z-index: 2;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0, 0.2);
+            }
+            .menu.active {
+                display: flex;
+            }
+            .menu li {
+                width: 100%;
+            }
+            .dropdown-content {
+                position: static;
+                background-color: #7744aa;
+                box-shadow: none;
+                display: none;
+            }
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            .burger {
+                display: block;
+            }
+            .search-toggle {
+                display: none;
+            }
+            .logo {
+                font-size: 1.2rem;
+            }
+        }
+        .menu a:focus + .dropdown-content {
+            display: block;
+        }
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #9966cc;
+            margin-bottom: 1rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiM3NzQ0YWEiLz48dGV4dCB4PSIyMCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPtCSPC90ZXh0Pjwvc3ZnPg==" alt="Логотип">
+                НавіСайт
+            </a>
+            <button class="burger" aria-label="Меню" aria-expanded="false">&#9776;</button>
+            <ul class="menu" id="main-menu">
+                <li><a href="#" class="active">Головна</a></li>
+                <li class="dropdown">
+                    <a href="#" aria-haspopup="true">Послуги</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Веб-дизайн</a></li>
+                        <li><a href="#">Розробка</a></li>
+                        <li><a href="#">SEO</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Портфоліо</a></li>
+                <li><a href="#">Блог</a></li>
+                <li><a href="#">Контакти</a></li>
+            </ul>
+            <button class="search-toggle" aria-label="Пошук">&#128269;</button>
+            <form class="search-form">
+                <input type="search" class="search-input" placeholder="Пошук..." aria-label="Пошук по сайту">
+                <button type="submit" class="search-button">&#128269;</button>
+            </form>
+        </div>
+    </header>
+    <main class="main-content">
+        <section class="section">
+            <h1>Адаптивна навігація</h1>
+            <p>Це приклад адаптивного меню, яке працює на різних пристроях.</p>
+            <p>Спробуйте змінити розмір вікна браузера, щоб побачити, як змінюється навігація.</p>
+        </section>
+        <section class="section">
+            <h2>Особливості</h2>
+            <ul>
+                <li>Адаптується під різні розміри екрану</li>
+                <li>Випадаюче підменю</li>
+                <li>Пошук по сайту</li>
+                <li>"Бургер-меню" для мобільної версії</li>
+                <li>Доступність з клавіатури</li>
+            </ul>
+        </section>
+    </main>
+    <script>
+        const burger = document.querySelector('.burger');
+        const menu = document.querySelector('.menu');
+        const searchToggle = document.querySelector('.search-toggle');
+        const searchForm = document.querySelector('.search-form');
+        const dropdowns = document.querySelectorAll('.dropdown');
+        burger.addEventListener('click', function() {
+            menu.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+        });
+        if (searchToggle) {
+            searchToggle.addEventListener('click', function() {
+                searchForm.classList.toggle('active');
+            });
+        }
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+        const menuItems = document.querySelectorAll('.menu a');
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                menuItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        document.addEventListener('click', function(event) {
+            if (event.target.closest('.has-submenu')) {
+                const parent = event.target.closest('.has-submenu').parentElement;
+                const isActive = parent.classList.contains('active');
+                document.querySelectorAll('.nav-item.active').forEach(item => {
+                    if (item !== parent) {
+                        item.classList.remove('active');
+                    }
+                });
+                parent.classList.toggle('active', !isActive);
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html> 
