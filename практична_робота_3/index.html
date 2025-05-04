@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Стилізація сайту за допомогою CSS</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2e6ff;
+        }
+        
+        .header {
+            background-color: #9966cc;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 28px;
+            text-shadow: 2px 2px 4px #330066;
+        }
+        
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #9966cc;
+            border-bottom: 1px dashed #cccccc;
+            padding-bottom: 5px;
+        }
+        
+        .my-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .my-list li {
+            padding: 8px;
+            margin-bottom: 5px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #9966cc;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Мій сайт зі стилями CSS</h1>
+        <p>Практична робота №3 - Вікторія Татарчук</p>
+    </div>
+    
+    <div class="container">
+        <div class="section" style="border-top: 4px solid #ff99cc; padding-top: 10px;">
+            <h2>Вбудовані стилі</h2>
+            <p style="color: #ff6600; font-size: 18px; font-weight: bold;">Це параграф із вбудованими стилями через атрибут style.</p>
+            <p style="background-color: #e6fffa; padding: 10px; border: 2px dotted #00aaaa;">А цей параграф має фон, рамку і відступи!</p>
+            <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                <div style="width: 30%; background-color: #ffe6cc; padding: 10px; text-align: center; border-radius: 5px;">Блок 1</div>
+                <div style="width: 30%; background-color: #ccffcc; padding: 10px; text-align: center; border-radius: 5px;">Блок 2</div>
+                <div style="width: 30%; background-color: #ccf2ff; padding: 10px; text-align: center; border-radius: 5px;">Блок 3</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Внутрішні стилі</h2>
+            <p>Ця секція використовує стилі, які я написала в тегу &lt;style&gt; в &lt;head&gt;.</p>
+            
+            <ul class="my-list">
+                <li>Список з власними стилями</li>
+                <li>Ще один пункт списку</li>
+                <li>І ще один пункт</li>
+            </ul>
+        </div>
+        
+        <div class="section" id="external-styles">
+            <h2>Зовнішні стилі</h2>
+            <p>Ця секція використовує стилі з файлу styles.css</p>
+            
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTUwIiBmaWxsPSIjZjVmNWY1Ij48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgZmlsbD0iI2Y4ZDNlNiIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjIwIiBmaWxsPSIjZmY5OWNjIi8+PGNpcmNsZSBjeD0iMTIwIiBjeT0iODAiIHI9IjQwIiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuNyIvPjwvc3ZnPg==" alt="Фото 1" class="gallery-image">
+                    <p class="gallery-caption">Моє фото з відпочинку</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTUwIiBmaWxsPSIjZjVmNWY1Ij48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgZmlsbD0iI2QzZjhmMSIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNjAiIHI9IjE1IiBmaWxsPSIjODhjY2ZmIi8+PGNpcmNsZSBjeD0iOTAiIGN5PSI2MCIgcj0iMTUiIGZpbGw9IiM4OGNjZmYiLz48Y2lyY2xlIGN4PSIxMzAiIGN5PSI2MCIgcj0iMTUiIGZpbGw9IiM4OGNjZmYiLz48L3N2Zz4=" alt="Фото 2" class="gallery-image">
+                    <p class="gallery-caption">Мої друзі</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTUwIiBmaWxsPSIjZjVmNWY1Ij48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgZmlsbD0iI2QzZjhkNSIvPjxwYXRoIGQ9Ik0wLDgwIEwyMCw3MCBMNDAsNzUgTDYwLDYwIEw4MCw3MCBMMTI1LDUwIEwxNTAsNjAgTDE3MCw1MCBMMTM1LDgwIEwxNTUsMTUwIEwwLDE1MCBaIiBmaWxsPSIjOTZlNmE1Ii8+PHBhdGggZD0iTTAsMTUwIEwyMDAsMTUwIEwyMDAsMTAwIEwxODAsMTEwIEwxNTAsMTA1IEwxMzAsMTIwIEwxMDAsMTEwIEw3MCwxMjAgTDUwLDExNSBMMzAsMTIwIEwwLDExMCBaIiBmaWxsPSIjNjZjYzk2Ii8+PC9zdmc+" alt="Фото 3" class="gallery-image">
+                    <p class="gallery-caption">Мій улюблений краєвид</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Ефекти при наведенні</h2>
+            <p>Наведіть курсор на кнопки і блоки щоб побачити ефекти!</p>
+            
+            <div class="buttons-wrapper">
+                <button class="hover-button">Натисни мене</button>
+                <button class="hover-button">Я теж кнопка</button>
+                <button class="hover-button">Цікава кнопка</button>
+            </div>
+            
+            <div class="hover-blocks">
+                <div class="hover-box">Наведи на мене</div>
+                <div class="hover-box">І на мене теж</div>
+                <div class="hover-box">Подивись що буде</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Додаткові CSS-ефекти</h2>
+            <div class="effects-container">
+                <div class="gradient-box">Градієнт</div>
+                <div class="shadow-box">Тінь</div>
+                <div class="transform-box">Трансформація</div>
+            </div>
+            
+            <div class="opacity-boxes">
+                <div class="opacity-box">100%</div>
+                <div class="opacity-box">80%</div>
+                <div class="opacity-box">50%</div>
+                <div class="opacity-box">20%</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Створено Вікторією Татарчук</p>
+    </div>
+</body>
+</html> 
