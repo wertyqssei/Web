@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтерактивні елементи</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Інтерактивні елементи на сторінці</h1>
+            <p>Приклади різних інтерактивних елементів з використанням HTML, CSS та JavaScript</p>
+        </header>
+        
+        <section id="modal-demo">
+            <h2>Модальне вікно</h2>
+            <p>Спливаюче вікно, яке відображає додаткову інформацію або форми.</p>
+            <button class="btn" id="open-modal">Відкрити модальне вікно</button>
+            
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <button class="close-modal" id="close-modal">&times;</button>
+                    <h3>Модальне вікно</h3>
+                    <p>Це приклад модального вікна. Воно з'являється поверх основного контенту сторінки.</p>
+                    <p>Модальні вікна часто використовуються для:</p>
+                    <ul>
+                        <li>Відображення важливих повідомлень</li>
+                        <li>Форм входу або реєстрації</li>
+                        <li>Підтвердження дій користувача</li>
+                    </ul>
+                    <button class="btn" id="confirm-modal">Підтвердити</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="form-demo">
+            <h2>Форма зворотного зв'язку</h2>
+            <p>Інтерактивна форма з валідацією полів.</p>
+            
+            <form class="feedback-form" id="feedback-form">
+                <div class="form-group">
+                    <label for="name">Ім'я:</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error-message">Будь ласка, введіть своє ім'я</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message">Будь ласка, введіть правильну email адресу</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="topic">Тема:</label>
+                    <select id="topic" name="topic" required>
+                        <option value="">Виберіть тему</option>
+                        <option value="question">Запитання</option>
+                        <option value="feedback">Відгук</option>
+                        <option value="problem">Проблема</option>
+                        <option value="other">Інше</option>
+                    </select>
+                    <div class="error-message">Будь ласка, виберіть тему</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Повідомлення:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <div class="error-message">Будь ласка, введіть повідомлення</div>
+                </div>
+                
+                <button type="submit" class="btn">Надіслати</button>
+            </form>
+        </section>
+        
+        <section id="gallery-demo">
+            <h2>Інтерактивна галерея</h2>
+            <p>Галерея зображень з ефектом збільшення при натисканні.</p>
+            
+            <div class="gallery">
+                <div class="gallery-item" data-caption="Фіолетові квіти">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiB2aWV3Qm94PSIwIDAgMjAwIDE1MCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxNTAiIGZpbGw9IiNmMmU2ZmYiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIzMCIgZmlsbD0iIzk5NjZjYyIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjgwIiByPSIyNSIgZmlsbD0iIzk5NjZjYyIvPjxjaXJjbGUgY3g9IjE1MCIgY3k9IjYwIiByPSIyMCIgZmlsbD0iIzk5NjZjYyIvPjwvc3ZnPg==" alt="Фіолетові квіти">
+                </div>
+                <div class="gallery-item" data-caption="Гори та озеро">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiB2aWV3Qm94PSIwIDAgMjAwIDE1MCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxNTAiIGZpbGw9IiNlNmYyZmYiLz48cGF0aCBkPSJNMCw4MCBMMzAsNDAgTDYwLDYwIEw5MCwzMCBMMTIwLDUwIEwxNTAsMjAgTDE4MCw0MCBMMjAwLDYwIEwyMDAsMTUwIEwwLDE1MCBaIiBmaWxsPSIjOTljY2ZmIi8+PHBhdGggZD0iTTAsMTAwIEwzMCw5MCBMNTBBMDQ1LDUwIEwyNTAsNjAuMTUwLDkwIE-OjJTIwwIEwwLDEwMCBaIiBmaWxsPSIjNjZhYWVlIi8+PC9zdmc+" alt="Гори та озеро">
+                </div>
+                <div class="gallery-item" data-caption="Осінній ліс">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiB2aWV3Qm94PSIwIDAgMjAwIDE1MCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxNTAiIGZpbGw9IiNmZmYyZTYiLz48cGF0aCBkPSJNMjAsMTUwIEwyMCw4MCBMMzAsODAgTDMwLDE1MCBaIiBmaWxsPSIjOTk2NjMzIi8+PHBhdGggZD0iTTgwLDE1MCBMODAsOTAgTDkwLDkwIEw5MCwxNTAgWiIgZmlsbD0iIzk5NjYzMyIvPjxwYXRoIGQ9Ik0xNDAsMTUwIEwxNDAsNzAgTDE1MCw3MCBMMTUwLDE1MCBaIiBmaWxsPSIjOTk2NjMzIi8+PGNpcmNsZSBjeD0iMjUiIGN5PSI1MCIgcj0iMjAiIGZpbGw9IiNmZjk5NjYiLz48Y2lyY2xlIGN4PSI4NSIgY3k9IjUwIiByPSIyNSIgZmlsbD0iI2ZmY2M5OSIvPjxjaXJjbGUgY3g9IjE0NSIgY3k9IjQwIiByPSIyMiIgZmlsbD0iI2ZmYWE3NyIvPjwvc3ZnPg==" alt="Осінній ліс">
+                </div>
+                <div class="gallery-item" data-caption="Міський пейзаж">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiB2aWV3Qm94PSIwIDAgMjAwIDE1MCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxNTAiIGZpbGw9IiNlNmU2ZTYiLz48cmVjdCB4PSIxMCIgeT0iNTAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNjY2NjY2MiLz48cmVjdCB4PSI1MCIgeT0iMzAiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiM5OTk5OTkiLz48cmVjdCB4PSIxMDAiIHk9IjcwIiB3aWR0aD0iMjAiIGhlaWdodD0iODAiIGZpbGw9IiNiYmJiYmIiLz48cmVjdCB4PSIxMzAiIHk9IjQwIiB3aWR0aD0iNTAiIGhlaWdodD0iMTEwIiBmaWxsPSIjYWFhYWFhIi8+PC9zdmc+" alt="Міський пейзаж">
+                </div>
+            </div>
+            
+            <div class="lightbox" id="lightbox">
+                <div class="lightbox-content">
+                    <img src="" alt="" id="lightbox-img">
+                    <div class="lightbox-caption" id="lightbox-caption"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="dropdown-demo">
+            <h2>Випадаюче меню</h2>
+            <p>Меню, яке відображається при натисканні на кнопку.</p>
+            
+            <div class="dropdown">
+                <button class="btn" id="dropdown-btn">Меню ▼</button>
+                <div class="dropdown-content" id="dropdown-content">
+                    <a href="#">Головна</a>
+                    <a href="#">Послуги</a>
+                    <a href="#">Про нас</a>
+                    <a href="#">Контакти</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="scroll-demo" style="height: 300px; overflow: auto;">
+            <h2>Прокручування</h2>
+            <p>Демонстрація кнопки "вгору" для прокручування сторінки.</p>
+            
+            <p>Прокрутіть цей розділ вниз, щоб побачити кнопку "вгору".</p>
+            
+            <div style="height: 600px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>Верхня частина розділу.</div>
+                <div>Середня частина розділу.</div>
+                <div>Нижня частина розділу.</div>
+            </div>
+            
+            <button class="scroll-to-top" id="scroll-to-top">↑</button>
+        </section>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html> 
