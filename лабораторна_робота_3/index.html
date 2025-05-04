@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Макет на Flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        a {
+            text-decoration: none;
+            color: #0366d6;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .header {
+            background-color: #9966cc;
+            color: white;
+            padding: 1rem 0;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .logo a {
+            color: white;
+        }
+        .main-nav ul {
+            display: flex;
+        }
+        .main-nav li {
+            margin-left: 1rem;
+        }
+        .main-nav a {
+            color: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .main-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: flex;
+        }
+        .content {
+            flex: 3;
+            margin-right: 2rem;
+        }
+        .sidebar {
+            flex: 1;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            align-self: flex-start;
+        }
+        .article {
+            background-color: white;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .article h2 {
+            color: #9966cc;
+            margin-bottom: 1rem;
+        }
+        .article p {
+            margin-bottom: 1rem;
+        }
+        .cards-section {
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            padding: 0 1rem;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #9966cc;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .card {
+            flex: 1 1 calc(25% - 20px);
+            min-width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-image {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        .card-content {
+            padding: 1rem;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #9966cc;
+        }
+        .card-text {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .card-button {
+            display: inline-block;
+            background-color: #9966cc;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .card-button:hover {
+            background-color: #7744aa;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 0;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 1rem;
+        }
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #9966cc;
+        }
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-links a {
+            color: #ccc;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            border-top: 1px solid #444;
+            width: 100%;
+        }
+        @media (max-width: 992px) {
+            .main-content {
+                flex-direction: column;
+            }
+            .content {
+                margin-right: 0;
+                margin-bottom: 2rem;
+            }
+            .card {
+                flex: 1 1 calc(33.333% - 20px);
+            }
+        }
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .logo {
+                margin-bottom: 1rem;
+            }
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .main-nav li {
+                margin: 0.5rem;
+            }
+            .card {
+                flex: 1 1 calc(50% - 20px);
+            }
+            .footer-column {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+        @media (max-width: 576px) {
+            .card {
+                flex: 1 1 100%;
+            }
+            .footer-column {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">FlexMakет</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Головна</a></li>
+                    <li><a href="#">Послуги</a></li>
+                    <li><a href="#">Портфоліо</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="main-content">
+        <main class="content">
+            <article class="article">
+                <h2>Переваги Flexbox</h2>
+                <p>Flexbox - це потужний інструмент для створення адаптивних макетів. Він дозволяє легко вирівнювати елементи, розподіляти вільний простір і змінювати порядок відображення без зміни HTML.</p>
+                <p>У цьому прикладі ми використовуємо Flexbox для створення повноцінного макету сайту з шапкою, основним контентом, сайдбаром і підвалом.</p>
+            </article>
+            <article class="article">
+                <h2>Основні властивості Flexbox</h2>
+                <p>Display: flex - перетворює елемент на flex-контейнер.</p>
+                <p>Flex-direction - встановлює напрямок головної осі (row, column).</p>
+                <p>Justify-content - вирівнює елементи вздовж головної осі.</p>
+                <p>Align-items - вирівнює елементи вздовж поперечної осі.</p>
+                <p>Flex - комбінована властивість для flex-grow, flex-shrink і flex-basis.</p>
+            </article>
+        </main>
+        <aside class="sidebar">
+            <h3>Корисні посилання</h3>
+            <ul>
+                <li><a href="#">Документація з Flexbox</a></li>
+                <li><a href="#">Гід по Flexbox</a></li>
+                <li><a href="#">Flexbox Froggy</a></li>
+                <li><a href="#">CSS Tricks Flexbox</a></li>
+            </ul>
+            <h3>Останні статті</h3>
+            <ul>
+                <li><a href="#">Порівняння Flexbox і Grid</a></li>
+                <li><a href="#">Адаптивний дизайн</a></li>
+                <li><a href="#">Тренди веб-розробки</a></li>
+            </ul>
+        </aside>
+    </div>
+    <section class="cards-section">
+        <h2 class="section-title">Наші послуги</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-image">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjUwIDIwMCI+PHJlY3Qgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNlNmU2ZmEiLz48Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMDAiIHI9IjUwIiBmaWxsPSIjOTk2NmNjIi8+PHRleHQgeD0iMTI1IiB5PSIxMDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIj5XRUItREVTSUdOPC90ZXh0Pjwvc3ZnPg==" alt="Веб-дизайн" width="100%" height="100%">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Веб-дизайн</h3>
+                    <p class="card-text">Створимо унікальний дизайн, який виділить ваш сайт серед конкурентів.</p>
+                    <a href="#" class="card-button">Детальніше</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjUwIDIwMCI+PHJlY3Qgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNlNmU2ZmEiLz48cmVjdCB4PSI4MCIgeT0iNTAiIHdpZHRoPSI5MCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiM5OTY2Y2MiLz48dGV4dCB4PSIxMjUiIHk9IjEwMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgYWxpZ25tZW50LWJhc2VsaW5lPSJtaWRkbGUiPlJPWlJPQktBPC90ZXh0Pjwvc3ZnPg==" alt="Розробка" width="100%" height="100%">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Розробка</h3>
+                    <p class="card-text">Розробка сучасних веб-додатків з використанням найновіших технологій.</p>
+                    <a href="#" class="card-button">Детальніше</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjUwIDIwMCI+PHJlY3Qgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNlNmU2ZmEiLz48cG9seWdvbiBwb2ludHM9IjEyNSw1MCA1MCwxNTAgMjAwLDE1MCIgZmlsbD0iIzk5NjZjYyIvPjx0ZXh0IHg9IjEyNSIgeT0iMTIwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBhbGlnbm1lbnQtYmFzZWxpbmU9Im1pZGRsZSI+U0VPPC90ZXh0Pjwvc3ZnPg==" alt="SEO оптимізація" width="100%" height="100%">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">SEO оптимізація</h3>
+                    <p class="card-text">Покращимо видимість вашого сайту в пошукових системах.</p>
+                    <a href="#" class="card-button">Детальніше</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjUwIDIwMCI+PHJlY3Qgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNlNmU2ZmEiLz48cmVjdCB4PSI3MCIgeT0iNjAiIHdpZHRoPSIxMTAiIGhlaWdodD0iODAiIGZpbGw9IiM5OTY2Y2MiIHJ4PSIxMCIgcnk9IjEwIi8+PHRleHQgeD0iMTI1IiB5PSIxMDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIj5URUNIIFNVUFBPUlQ8L3RleHQ+PC9zdmc+" alt="Техпідтримка" width="100%" height="100%">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Техпідтримка</h3>
+                    <p class="card-text">Забезпечимо надійну роботу вашого сайту 24/7.</p>
+                    <a href="#" class="card-button">Детальніше</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3 class="footer-title">Про нас</h3>
+                <p>Ми команда професіоналів, яка спеціалізується на розробці сучасних веб-сайтів та додатків.</p>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Послуги</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Веб-дизайн</a></li>
+                    <li><a href="#">Розробка</a></li>
+                    <li><a href="#">SEO оптимізація</a></li>
+                    <li><a href="#">Техпідтримка</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Контакти</h3>
+                <ul class="footer-links">
+                    <li>Зв'язатись з нами</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Слідкуйте за нами</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>&copy; FlexMaкет. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
