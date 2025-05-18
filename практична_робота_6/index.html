@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Персонажі Rick and Morty</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Персонажі Rick and Morty</h1>
+            <p class="subtitle">Інформація про персонажів із популярного серіалу</p>
+        </header>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Пошук персонажів...">
+                <button id="search-btn">Пошук</button>
+            </div>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="status-filter">Статус:</label>
+                    <select id="status-filter">
+                        <option value="">Всі</option>
+                        <option value="alive">Живі</option>
+                        <option value="dead">Мертві</option>
+                        <option value="unknown">Невідомо</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="gender-filter">Стать:</label>
+                    <select id="gender-filter">
+                        <option value="">Всі</option>
+                        <option value="male">Чоловіча</option>
+                        <option value="female">Жіноча</option>
+                        <option value="genderless">Безстатеві</option>
+                        <option value="unknown">Невідомо</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="error-container" id="error-container"></div>
+        
+        <div class="loader" id="loader">
+            <div class="spinner"></div>
+            <p>Завантаження персонажів...</p>
+        </div>
+
+        <div class="characters-grid" id="characters-container"></div>
+        
+        <div class="pagination" id="pagination">
+            <button id="prev-page" disabled>Попередня</button>
+            <span id="current-page">Сторінка 1</span>
+            <button id="next-page">Наступна</button>
+        </div>
+    </div>
+
+    <template id="character-template">
+        <div class="character-card">
+            <div class="character-image">
+                <img src="" alt="">
+            </div>
+            <div class="character-info">
+                <h2 class="character-name"></h2>
+                <p class="character-status"><span class="status-indicator"></span> <span class="status-text"></span> - <span class="species-text"></span></p>
+                <div class="info-group">
+                    <p class="info-label">Останнє відоме місце:</p>
+                    <p class="location-text"></p>
+                </div>
+                <div class="info-group">
+                    <p class="info-label">Походження:</p>
+                    <p class="origin-text"></p>
+                </div>
+                <div class="info-group">
+                    <p class="info-label">Стать:</p>
+                    <p class="gender-text"></p>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <footer>
+        <p>Практична робота №6: Робота з API та отримання даних</p>
+        <p class="api-credit">Дані надано <a href="https://rickandmortyapi.com/" target="_blank">The Rick and Morty API</a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
