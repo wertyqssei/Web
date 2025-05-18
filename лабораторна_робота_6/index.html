@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фільтрація та сортування</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Каталог товарів</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="filters-wrapper">
+            <h2>Фільтри</h2>
+            
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Пошук товарів...">
+                <button id="search-button">Шукати</button>
+            </div>
+            
+            <div class="filter-container">
+                <h3>Категорії</h3>
+                <div class="filter-options" id="category-filters">
+                    <!-- Категорії будуть додані через JavaScript -->
+                </div>
+            </div>
+            
+            <div class="filter-container">
+                <h3>Ціна</h3>
+                <div class="price-slider">
+                    <div class="price-range">
+                        <input type="number" id="min-price" placeholder="від">
+                        <input type="number" id="max-price" placeholder="до">
+                    </div>
+                    <button id="apply-price">Застосувати</button>
+                </div>
+            </div>
+            
+            <div class="filter-container">
+                <h3>В наявності</h3>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="in-stock" checked>
+                        <label for="in-stock">Тільки товари в наявності</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-container">
+                <h3>Рейтинг</h3>
+                <div class="filter-options" id="rating-filters">
+                    <div class="filter-option">
+                        <input type="checkbox" id="rating-5" value="5">
+                        <label for="rating-5">★★★★★</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="rating-4" value="4">
+                        <label for="rating-4">★★★★☆ і вище</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="rating-3" value="3">
+                        <label for="rating-3">★★★☆☆ і вище</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-actions">
+                <button id="reset-filters">Скинути всі фільтри</button>
+            </div>
+        </div>
+        
+        <div class="products-wrapper">
+            <div class="sorting-container">
+                <div class="active-filters" id="active-filters">
+                    <!-- Тут будуть відображатися активні фільтри -->
+                </div>
+                
+                <div class="sort-options">
+                    <label for="sort-select">Сортувати за:</label>
+                    <select id="sort-select">
+                        <option value="name-asc">Назва (А-Я)</option>
+                        <option value="name-desc">Назва (Я-А)</option>
+                        <option value="price-asc">Ціна (від низької до високої)</option>
+                        <option value="price-desc">Ціна (від високої до низької)</option>
+                        <option value="rating-desc">Рейтингом (від високого до низького)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="products-container">
+                <!-- Тут будуть відображатися товари -->
+            </div>
+            
+            <div class="no-results" id="no-results">
+                <p>Товари не знайдені. Спробуйте змінити параметри фільтрації.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Лабораторна робота №6: Фільтрація та сортування</p>
+        </div>
+    </footer>
+    
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html> 
