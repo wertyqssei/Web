@@ -1,0 +1,441 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #9966cc;
+    --primary-dark: #7d4eb9;
+    --primary-light: #b38cdb;
+    --text: #333;
+    --text-light: #666;
+    --bg: #f8f9fa;
+    --white: #fff;
+    --border: #ddd;
+    --success: #2ecc71;
+    --error: #e74c3c;
+}
+
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+section {
+    background: var(--white);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 1.8em;
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: var(--primary-dark);
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(153, 102, 204, 0.2);
+    margin-bottom: 20px;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.info span {
+    background: var(--primary-light);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+/* Gallery */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.lazy-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.lazy-img:hover {
+    transform: scale(1.05);
+}
+
+.lazy-img[data-src] {
+    opacity: 0.7;
+    background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+                linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+    background-size: 20px 20px;
+}
+
+/* Icons */
+.icon-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.icon-grid img {
+    width: 64px;
+    height: 64px;
+    transition: transform 0.3s ease;
+}
+
+.icon-grid img:hover {
+    transform: scale(1.2);
+}
+
+/* Art Direction */
+.banner {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Stats - Dashboard Style */
+.stats {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.stats h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.metric-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text);
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.metric-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.metric-header .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+.before .metric-header .icon {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    color: white;
+}
+
+.after .metric-header .icon {
+    background: linear-gradient(135deg, #51cf66, #40c057);
+    color: white;
+}
+
+.metric-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(0,0,0,0.03);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.metric-label {
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.metric-value {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--text);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 2s ease-in-out;
+}
+
+.before .progress-fill {
+    background: linear-gradient(90deg, #ff6b6b, #ee5a52);
+    width: 85%;
+}
+
+.after .progress-fill {
+    background: linear-gradient(90deg, #51cf66, #40c057);
+    width: 25%;
+}
+
+.improvement {
+    text-align: center;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.improvement-title {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.improvement-value {
+    font-size: 2em;
+    font-weight: bold;
+    color: #51cf66;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.improvement-details {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.detail-item {
+    text-align: center;
+}
+
+.detail-value {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #51cf66;
+}
+
+.detail-label {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--primary-dark);
+    color: white;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    section {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info {
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .info span {
+        padding: 8px 12px;
+        font-size: 0.8em;
+    }
+    
+    .icon-grid {
+        gap: 20px;
+    }
+    
+    /* Stats responsive */
+    .stats {
+        padding: 25px 20px;
+    }
+    
+    .stats h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    
+    .comparison {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .metric-card {
+        padding: 20px;
+    }
+    
+    .metric-header {
+        font-size: 1.2em;
+    }
+    
+    .improvement-details {
+        gap: 20px;
+    }
+    
+    .improvement-value {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 30px 15px;
+    }
+    
+    .icon-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stats {
+        padding: 20px 15px;
+    }
+    
+    .metric-header .icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+    }
+    
+    .metric-item {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .improvement-details {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

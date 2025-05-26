@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №8: Оптимізація зображень</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖼️ Лабораторна робота №8</h1>
+            <p>Оптимізація швидкості завантаження зображень</p>
+        </header>
+        
+        <main>            <!-- Адаптивне зображення з WebP -->
+            <section class="hero">
+                <h2>Адаптивні зображення</h2>
+                <picture>
+                    <source
+                        srcset="images/hero-fallback.svg 1920w,
+                                images/hero-fallback.svg 1280w,
+                                images/hero-fallback.svg 640w"
+                        sizes="(max-width: 640px) 100vw,
+                               (max-width: 1280px) 50vw,
+                               1920px"
+                        type="image/svg+xml">
+                    <img src="images/hero-fallback.svg"
+                         alt="Адаптивне зображення"
+                         class="hero-img">
+                </picture>
+                <div class="info">
+                    <span>📱 Responsive</span>
+                    <span>🚀 WebP + Fallback</span>
+                    <span>⚡ Optimized</span>
+                </div>
+            </section>
+
+            <!-- Галерея з Lazy Loading -->
+            <section class="gallery">
+                <h2>Галерея з Lazy Loading</h2>                <div class="grid">
+                    <img src="images/placeholder.svg"
+                         data-src="images/photo-1.svg"
+                         alt="Фотографія 1"
+                         loading="lazy"
+                         class="lazy-img">
+                    <img src="images/placeholder.svg"
+                         data-src="images/photo-2.svg"
+                         alt="Фотографія 2"
+                         loading="lazy"
+                         class="lazy-img">
+                    <img src="images/placeholder.svg"
+                         data-src="images/photo-3.svg"
+                         alt="Фотографія 3"
+                         loading="lazy"
+                         class="lazy-img">
+                    <img src="images/placeholder.svg"
+                         data-src="images/photo-4.svg"
+                         alt="Фотографія 4"
+                         loading="lazy"
+                         class="lazy-img">
+                </div>
+            </section>
+
+            <!-- Іконки з різними розмірами -->
+            <section class="icons">
+                <h2>Адаптивні іконки</h2>                <div class="icon-grid">
+                    <img srcset="images/icon-1x.svg 1x, images/icon-2x.svg 2x"
+                         src="images/icon-1x.svg"
+                         alt="Іконка">
+                    <img srcset="images/icon-1x.svg 1x, images/icon-2x.svg 2x"
+                         src="images/icon-1x.svg"
+                         alt="Іконка">
+                    <img srcset="images/icon-1x.svg 1x, images/icon-2x.svg 2x"
+                         src="images/icon-1x.svg"
+                         alt="Іконка">
+                </div>
+            </section>
+
+            <!-- Art Direction -->
+            <section class="art-direction">
+                <h2>Art Direction</h2>                <picture>
+                    <source media="(max-width: 768px)"
+                            srcset="images/mobile-banner.svg"
+                            type="image/svg+xml">
+                    <img src="images/desktop-banner.svg"
+                         alt="Банер"
+                         class="banner">
+                </picture>
+                <p>Різні зображення для мобільних та десктопних пристроїв</p>
+            </section>            <!-- Статистика -->
+            <section class="stats">
+                <h2>📊 Результати оптимізації</h2>
+                <div class="comparison">
+                    <div class="metric-card before">
+                        <div class="metric-header">
+                            <div class="icon">❌</div>
+                            До оптимізації
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Розмір файлів:</span>
+                            <span class="metric-value">2.4 МБ</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Час завантаження:</span>
+                            <span class="metric-value">8.2 сек</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">HTTP запитів:</span>
+                            <span class="metric-value">47</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-card after">
+                        <div class="metric-header">
+                            <div class="icon">✅</div>
+                            Після оптимізації
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Розмір файлів:</span>
+                            <span class="metric-value">640 КБ</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Час завантаження:</span>
+                            <span class="metric-value">2.1 сек</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">HTTP запитів:</span>
+                            <span class="metric-value">18</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="improvement">
+                    <div class="improvement-title">Загальне покращення продуктивності:</div>
+                    <div class="improvement-value">74%</div>
+                    <div class="improvement-details">
+                        <div class="detail-item">
+                            <div class="detail-value">-74%</div>
+                            <div class="detail-label">розміру</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-value">-74%</div>
+                            <div class="detail-label">часу</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-value">-62%</div>
+                            <div class="detail-label">запитів</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Лабораторна робота №8: Оптимізація швидкості завантаження зображень</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

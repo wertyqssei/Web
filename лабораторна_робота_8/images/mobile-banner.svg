@@ -1,0 +1,11 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mobile" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b38cdb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9966cc;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="200" fill="url(#mobile)"/>
+  <text x="200" y="90" font-family="Arial" font-size="18" fill="white" text-anchor="middle">Mobile Banner</text>
+  <text x="200" y="110" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Compact Version</text>
+</svg>
