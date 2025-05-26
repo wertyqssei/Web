@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оптимізація графічного контенту</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Оптимізація графічного контенту</h1>
+            <p>Основні техніки оптимізації зображень для веб</p>
+        </header>
+        
+        <main>
+            <section class="hero">
+                <img src="images/hero-fallback.svg" alt="Оптимізація зображень" class="hero-img">
+                <h2>Швидкі зображення = Кращий UX</h2>
+            </section>
+
+            <section class="formats">
+                <h2>Формати зображень</h2>
+                <div class="format-grid">
+                    <div class="format-card">
+                        <h3>JPEG</h3>
+                        <img src="images/example-photo.svg" alt="JPEG приклад">
+                        <p>Ідеально для фотографій з багатьма кольорами</p>
+                        <ul>
+                            <li>Хороше стиснення</li>
+                            <li>Підтримка мільйонів кольорів</li>
+                            <li>Без прозорості</li>
+                        </ul>
+                    </div>
+                    <div class="format-card">
+                        <h3>PNG</h3>
+                        <img src="images/example-logo.svg" alt="PNG приклад">
+                        <p>Для графіки з прозорістю та логотипів</p>
+                        <ul>
+                            <li>Підтримка прозорості</li>
+                            <li>Без втрат якості</li>
+                            <li>Більший розмір</li>
+                        </ul>
+                    </div>
+                    <div class="format-card">
+                        <h3>WebP</h3>
+                        <img src="images/example-webp.svg" alt="WebP приклад">
+                        <p>Сучасний формат з кращим стисненням</p>
+                        <ul>
+                            <li>На 25-35% менший</li>
+                            <li>Прозорість та анімації</li>
+                            <li>Потребує fallback</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="optimization">
+                <h2>Техніки оптимізації</h2>
+                
+                <div class="technique">
+                    <h3>Адаптивні зображення</h3>
+                    <div class="code-example">
+                        <pre><code>&lt;img src="image-small.jpg"
+     srcset="image-small.jpg 480w,
+             image-medium.jpg 768w,
+             image-large.jpg 1200w"
+     sizes="(max-width: 480px) 100vw, 50vw"
+     alt="Адаптивне зображення"&gt;</code></pre>
+                    </div>
+                    <img src="images/demo-medium.svg" alt="Демо адаптивних зображень" class="demo-img">
+                </div>
+                
+                <div class="technique">
+                    <h3>Lazy Loading</h3>
+                    <div class="code-example">
+                        <pre><code>&lt;img src="image.jpg" 
+     alt="Зображення" 
+     loading="lazy"&gt;</code></pre>
+                    </div>
+                    <div class="lazy-demo">
+                        <img src="images/lazy-1.svg" alt="Lazy 1" loading="lazy" class="lazy-img">
+                        <img src="images/lazy-2.svg" alt="Lazy 2" loading="lazy" class="lazy-img">
+                        <img src="images/lazy-3.svg" alt="Lazy 3" loading="lazy" class="lazy-img">
+                    </div>
+                </div>
+            </section>
+
+            <section class="performance">
+                <h2>Порівняння продуктивності</h2>
+                <div class="comparison">
+                    <div class="comparison-item bad">
+                        <h3>Без оптимізації</h3>
+                        <div class="metric">Розмір: 2.4 МБ</div>
+                        <div class="metric">Час: 8.2 сек</div>
+                        <div class="metric">Запитів: 47</div>
+                    </div>
+                    <div class="comparison-item good">
+                        <h3>З оптимізацією</h3>
+                        <div class="metric">Розмір: 640 КБ</div>
+                        <div class="metric">Час: 2.1 сек</div>
+                        <div class="metric">Запитів: 18</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tools">
+                <h2>Інструменти</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>Онлайн</h3>
+                        <ul>
+                            <li>TinyPNG/TinyJPG</li>
+                            <li>Squoosh</li>
+                            <li>Compressor.io</li>
+                        </ul>
+                    </div>
+                    <div class="tool-card">
+                        <h3>CLI</h3>
+                        <ul>
+                            <li>ImageOptim</li>
+                            <li>Sharp</li>
+                            <li>WebP tools</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Практична робота №8: Оптимізація графічного контенту</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

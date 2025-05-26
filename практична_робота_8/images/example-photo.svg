@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs>
+    <linearGradient id="photoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b"/>
+      <stop offset="50%" style="stop-color:#ee5a24"/>
+      <stop offset="100%" style="stop-color:#feca57"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Фон фотографії -->
+  <rect width="300" height="200" fill="url(#photoGradient)"/>
+  
+  <!-- Сонце -->
+  <circle cx="240" cy="60" r="25" fill="#feca57"/>
+  
+  <!-- Гори -->
+  <polygon points="0,200 80,120 160,140 300,80 300,200" fill="rgba(0,0,0,0.2)"/>
+  <polygon points="0,200 60,160 120,140 200,120 300,100 300,200" fill="rgba(0,0,0,0.1)"/>
+  
+  <!-- Дерева -->
+  <ellipse cx="50" cy="180" rx="15" ry="20" fill="#27ae60"/>
+  <ellipse cx="120" cy="175" rx="20" ry="25" fill="#2ecc71"/>
+  <ellipse cx="200" cy="185" rx="12" ry="15" fill="#27ae60"/>
+  
+  <!-- Підпис -->
+  <text x="150" y="190" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+    JPEG Example
+  </text>
+</svg>
