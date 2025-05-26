@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №9 - Кешування та стиснення</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>🗄️ Практична робота №9</h1>
+        <p>Налаштування кешування та стиснення веб-ресурсів</p>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <!-- Форма користувача -->
+            <div class="card">
+                <h3>📝 Форма користувача</h3>
+                <form id="userForm">
+                    <div class="form-group">
+                        <label for="username">Ім'я користувача:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Про себе:</label>
+                        <textarea id="bio" name="bio" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn">💾 Зберегти дані</button>
+                    <button type="button" class="btn btn-danger" onclick="clearForm()">🗑️ Очистити</button>
+                </form>
+                <div class="cache-info">
+                    <strong>Статус кешу форми:</strong> <span id="formCacheStatus">Порожній</span>
+                </div>
+            </div>
+
+            <!-- Галерея зображень -->
+            <div class="card">
+                <h3>🖼️ Галерея зображень</h3>
+                <button class="btn" onclick="loadGallery()">🔄 Завантажити галерею</button>
+                <div id="gallery" class="gallery"></div>
+                <div class="cache-info">
+                    <strong>Статус кешу зображень:</strong> <span id="imageCacheStatus">Не завантажено</span>
+                </div>
+            </div>
+
+            <!-- Налаштування користувача -->
+            <div class="card">
+                <h3>⚙️ Налаштування користувача</h3>                <div class="form-group">
+                    <label for="theme">Тема інтерфейсу:</label>
+                    <select id="theme">
+                        <option value="light">Світла</option>
+                        <option value="dark">Темна</option>
+                        <option value="auto">Автоматична</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="language">Мова інтерфейсу:</label>
+                    <select id="language">
+                        <option value="uk">Українська</option>
+                        <option value="en">English</option>
+                        <option value="ru">Русский</option>
+                    </select>
+                </div>                <div class="settings-panel">
+                    <strong>Поточні налаштування:</strong>
+                    <div id="currentSettings">Налаштування не збережені</div>
+                    <button class="btn btn-danger" onclick="resetSettings()" style="margin-top: 1rem;">
+                        🔄 Скинути налаштування
+                    </button>
+                </div>
+            </div>
+
+            <!-- Динамічний контент -->
+            <div class="card">
+                <h3>🔄 Динамічний контент</h3>
+                <button class="btn" onclick="loadDynamicContent()">📡 Завантажити дані</button>
+                <button class="btn btn-success" onclick="showCacheStats()">📊 Статистика кешу</button>
+                <div id="dynamicContent" style="margin-top: 1.5rem;">
+                    <p>Натисніть кнопку для завантаження динамічного контенту</p>
+                </div>
+                <div class="cache-info">
+                    <strong>Статус API кешу:</strong> <span id="apiCacheStatus">Порожній</span>
+                </div>
+            </div>        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
