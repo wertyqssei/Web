@@ -1,0 +1,310 @@
+/* Компоненти для лабораторної роботи №9 */
+
+/* Карточки порівняння */
+.comparison-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.comparison-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comparison-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.comparison-card h3 {
+    color: #9966cc;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Індикатори прогресу */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #9966cc, #7d4eb9);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+    width: 0%;
+}
+
+/* Метрики продуктивності */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.metric-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #9966cc;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #9966cc;
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    color: #666;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.metric-improvement {
+    font-size: 0.8rem;
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 0.25rem;
+}
+
+/* Демонстрація завантаження */
+.loading-demo {
+    border: 2px dashed #9966cc;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    margin: 1rem 0;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #9966cc;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Оптимізовані зображення */
+.image-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.image-demo {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.image-demo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.image-info {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Кнопки завантаження */
+.load-button {
+    background: linear-gradient(135deg, #9966cc, #7d4eb9);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin: 0.5rem;
+}
+
+.load-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(153, 102, 204, 0.3);
+}
+
+.load-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Статистика файлів */
+.file-stats {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.file-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #9966cc;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Техніки оптимізації */
+.optimization-techniques {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.technique {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #9966cc;
+}
+
+.technique h4 {
+    color: #9966cc;
+    margin-bottom: 0.5rem;
+}
+
+.technique-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.status-applied {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .comparison-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .image-comparison {
+        grid-template-columns: 1fr;
+    }
+    
+    .file-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .file-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Анімації завантаження контенту */
+.content-loaded {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Стилі для ледачого завантаження */
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}
+
+/* Індикатор швидкості */
+.speed-indicator {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.speed-bar {
+    flex: 1;
+    height: 20px;
+    background: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 1rem;
+}
+
+.speed-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff6b6b, #feca57, #48cae4, #51cf66);
+    border-radius: 10px;
+    transition: width 2s ease-in-out;
+}

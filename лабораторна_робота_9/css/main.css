@@ -1,0 +1,136 @@
+/* Основні стилі для лабораторної роботи 9 */
+/* Цей файл завантажується асинхронно після критичного CSS */
+
+:root {
+    --primary-color: #9966cc;
+    --primary-dark: #7d4eb9;
+    --primary-light: #b38cdb;
+    --text-color: #333;
+    --text-light: #666;
+    --background-color: #f8f9fa;
+    --card-background: #fff;
+    --border-color: #ddd;
+    --code-bg: #f5f5f5;
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+}
+
+/* Додаткові стилі для компонентів */
+.code-example {
+    background: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    overflow-x: auto;
+}
+
+.code-example pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.image-demo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.lazy-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.lazy-image[data-src] {
+    opacity: 0.7;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}
+
+/* Анімації для плавного завантаження */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+    animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Стилі для списків */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* Покращені кнопки */
+button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Responsive дизайн */
+@media (max-width: 768px) {
+    .tab-nav {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .tab-btn:last-child {
+        border-bottom: none;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .code-example {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-content {
+        padding: 20px;
+    }
+}
